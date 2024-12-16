@@ -16,6 +16,9 @@ connectDB();
 
 app.use("/user",userRouter)
 app.use("/product",productRouter)
+app.get("/",(req,res)=>{
+    res.send("Hello World")
+})
 
 app.listen(3000,()=>{
     console.log("Server Running on port 3000")
