@@ -17,7 +17,7 @@ var instance = new Razorpay({
 module.exports.signup = async (req, res, next) => {
     try {
         const { username, email, password, role } = req.body
-        if (!username || !email || !password || !role) {
+        if (!username || !email || !password) {
             return res.status(400).json({ message: "All fields are required" })
         }
         const isavailableuser = await userModel.findOne({ email })
